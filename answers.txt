@@ -1,0 +1,14 @@
+1.
+i would say there is some p-hacking risk.
+
+3 of the p-values were not significant: 0.168, 0.141, and 0.052. 
+Only one p-value was below 0.05, which was ""Did instructors search more/less?" p-value:  0.045"
+
+because this p-value is very close to 0.05, 
+and because multiple tests were performed, 
+I am not be very comfortable making a strong conclusion at alpha=0.05. 
+The result suggests probably instructors searched different number of time with the new design,
+but the evidence is weak. so i would describe it as possible evidence, not a strong conclusion.
+
+
+2.
