@@ -11,4 +11,39 @@ The result suggests probably instructors searched different number of time with 
 but the evidence is weak. so i would describe it as possible evidence, not a strong conclusion.
 
 
+---------------------------------
 2.
+7 implementation so the number of distinct pairs is:
+
+C(7, 2)= (7×6) /2 = 21 
+so 21 tests.
+If we used p<0.05 for each test,
+the probability of having at least one false positive is:
+
+1 - (1 - 0.05)^21 = 1 - 0.95^21 = 0.65943837371   [source: https://www.google.com/search?q=1+-+0.95%5E21&rlz=1C1YTUH_enCA1189CA1189&oq=1+-+0.95%5E21&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQBhhA0gEHOTcxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8 ]
+
+so about 65.9%=66%
+
+So the effective p-value of running all 21 t-tests at 0.05 is almost 0.66 
+so you have almost a two in three chance of drawing at least one false here. 
+A Bonferroni correction fixes this by testing each pair at alpha = 0.05/ 21= 0.00238095238 source: [ https://www.google.com/search?q=0.05+%2F+21&sca_esv=27b8a2e72666fe1f&rlz=1C1YTUH_enCA1189CA1189&sxsrf=APpeQntyQavzOVDKOgfy5FGlKe-9bfjcUw%3A1782540956322&ei=nGo_aseeE5nM0PEPvIjHkAU&biw=797&bih=1137&ved=0ahUKEwjH3P7D4qaVAxUZJjQIHTzEEVIQ4dUDCBI&uact=5&oq=0.05+%2F+21&gs_lp=Egxnd3Mtd2l6LXNlcnAiCTAuMDUgLyAyMTIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSI8JUABYAHAAeAGQAQCYAWqgAWqqAQMwLjG4AQPIAQD4AQL4AQGYAgGgAnGYAwCSBwMwLjGgB6IIsgcDMC4xuAdxwgcDMi0xyAcFgAgB&sclient=gws-wiz-serp ]
+keeping the family-wise error rate near 0.05. 
+
+
+--------------------------------------------
+3.
+based on the mean running times and the Tukey test,
+the ranking: 
+partition_sort < qs1 < qs5 < merge1 / qs4 / qs2 / qs3  
+
+so partition is the fastest.
+other implementations: merge1, qs4, qs2, and qs3, had same running times. so could not be distinguished.
+
+ones could not be distinguished (i.e. which pairs could our experiment not conclude had different running times?):
+
+merge1 vs qs2
+merge1 vs qs3
+merge1 vs qs4
+qs2 vs qs3
+qs2 vs qs4
+qs3 vs qs4
